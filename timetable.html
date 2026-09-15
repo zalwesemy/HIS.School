@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HIS — Timetable</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 25px 15px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 35px;
+            padding-left: 10px;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        .nav a {
+            display: block;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #4b5563;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main {
+            margin-left: 240px;
+            padding: 30px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search {
+            width: 300px;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+        }
+
+        .timetable {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th,
+        td {
+            padding: 18px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            border-right: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: bold;
+        }
+
+        td {
+            height: 80px;
+        }
+
+        .subject {
+            font-weight: bold;
+        }
+
+        .room {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .break {
+            color: #9ca3af;
+            font-style: italic;
+        }
+
+        @media (max-width: 700px) {
+
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .topbar {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+
+            .search {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            HIS<span>.</span>
+        </div>
+
+        <nav class="nav">
+
+            <a href="index.html">🏠 Home</a>
+
+            <a href="timetable.html" class="active">
+                📅 Timetable
+            </a>
+
+            <a href="#">📚 Subjects</a>
+            <a href="#">📝 Homework</a>
+            <a href="#">🧪 Projects</a>
+            <a href="#">📊 Grades</a>
+            <a href="#">✅ Attendance</a>
+            <a href="#">📢 Announcements</a>
+            <a href="#">🤖 HIS AI</a>
+            <a href="#">🔔 Notifications</a>
+            <a href="#">👤 Profile</a>
+            <a href="#">⚙️ Settings</a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main">
+
+
+        <div class="topbar">
+
+            <h2>Timetable</h2>
+
+            <input
+                class="search"
+                type="text"
+                placeholder="🔍 Search HIS..."
+            >
+
+        </div>
+
+
+        <section class="header">
+
+            <h1>📅 Weekly Timetable</h1>
+
+            <p>
+                View all your classes for the week.
+            </p>
+
+        </section>
+
+
+        <section class="timetable">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Time</th>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <th>08:00</th>
+
+                        <td>
+                            <span class="subject">Mathematics</span>
+                            <span class="room">Room 204</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Physics</span>
+                            <span class="room">Lab 2</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">English</span>
+                            <span class="room">Room 112</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Computer Science</span>
+                            <span class="room">Room 301</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Mathematics</span>
+                            <span class="room">Room 204</span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <th>09:00</th>
+
+                        <td>
+                            <span class="subject">English</span>
+                            <span class="room">Room 112</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Computer Science</span>
+                            <span class="room">Room 301</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Mathematics</span>
+                            <span class="room">Room 204</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Physics</span>
+                            <span class="room">Lab 2</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">English</span>
+                            <span class="room">Room 112</span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <th>10:00</th>
+
+                        <td>
+                            <span class="subject">Physics</span>
+                            <span class="room">Lab 2</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Arabic</span>
+                            <span class="room">Room 105</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Computer Science</span>
+                            <span class="room">Room 301</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Mathematics</span>
+                            <span class="room">Room 204</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Physics</span>
+                            <span class="room">Lab 2</span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <th>11:00</th>
+
+                        <td class="break">Break</td>
+                        <td class="break">Break</td>
+                        <td class="break">Break</td>
+                        <td class="break">Break</td>
+                        <td class="break">Break</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <th>11:30</th>
+
+                        <td>
+                            <span class="subject">Computer Science</span>
+                            <span class="room">Room 301</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Mathematics</span>
+                            <span class="room">Room 204</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Physics</span>
+                            <span class="room">Lab 2</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">English</span>
+                            <span class="room">Room 112</span>
+                        </td>
+
+                        <td>
+                            <span class="subject">Arabic</span>
+                            <span class="room">Room 105</span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>
