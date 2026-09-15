@@ -1,321 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIS | Home</title>
 
-    <title>HIS — School Platform</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    background: #f4f7fb;
+    color: #1f2937;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-        }
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 25px 15px;
+}
 
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 240px;
-            height: 100vh;
-            background: #ffffff;
-            border-right: 1px solid #e5e7eb;
-            padding: 25px 15px;
-        }
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 35px;
-            padding-left: 10px;
-        }
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #4b5563;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 10px;
+    font-size: 15px;
+}
 
-        .logo span {
-            color: #2563eb;
-        }
+.sidebar a:hover,
+.sidebar a.active {
+    background: #e8f0ff;
+    color: #2563eb;
+    font-weight: bold;
+}
 
-        .nav a {
-            display: block;
-            padding: 12px 15px;
-            margin: 5px 0;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #4b5563;
-        }
+.main {
+    margin-left: 240px;
+    padding: 30px;
+}
 
-        .nav a:hover,
-        .nav a.active {
-            background: #2563eb;
-            color: white;
-        }
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
-        .main {
-            margin-left: 240px;
-            padding: 30px;
-        }
+.search {
+    width: 300px;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+}
 
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
+.welcome {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
 
-        .search {
-            width: 300px;
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            outline: none;
-        }
+.welcome h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
 
-        .welcome {
-            background: #2563eb;
-            color: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-        }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
 
-        .welcome h1 {
-            margin-bottom: 8px;
-        }
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-bottom: 25px;
-        }
+.card h3 {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
 
-        .card {
-            background: white;
-            padding: 22px;
-            border-radius: 15px;
-            border: 1px solid #e5e7eb;
-        }
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #111827;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 15px;
-            color: #6b7280;
-        }
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 25px;
+}
 
-        .card p {
-            font-size: 25px;
-            font-weight: bold;
-        }
+.section h2 {
+    margin-bottom: 18px;
+}
 
-        .sections {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-        }
+.class-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
 
-        .panel {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #e5e7eb;
-        }
+.class-row:last-child {
+    border-bottom: none;
+}
 
-        .panel h2 {
-            margin-bottom: 20px;
-        }
+.time {
+    color: #2563eb;
+    font-weight: bold;
+}
 
-        .class {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-        @media (max-width: 900px) {
+@media (max-width: 650px) {
+    .sidebar {
+        width: 190px;
+    }
 
-            .sidebar {
-                width: 190px;
-            }
+    .main {
+        margin-left: 190px;
+        padding: 20px;
+    }
 
-            .main {
-                margin-left: 190px;
-            }
+    .cards {
+        grid-template-columns: 1fr;
+    }
 
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .sections {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .sidebar {
-                display: none;
-            }
-
-            .main {
-                margin-left: 0;
-                padding: 15px;
-            }
-
-            .topbar {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
-            }
-
-            .search {
-                width: 100%;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .search {
+        width: 180px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <aside class="sidebar">
+<!-- SIDEBAR -->
+<div class="sidebar">
 
-        <div class="logo">
-            HIS<span>.</span>
+    <div class="logo">HIS</div>
+
+    <a href="index.html" class="active">🏠 Home</a>
+
+    <a href="timetable.html">📅 Timetable</a>
+
+    <a href="subjects.html">📚 Subjects</a>
+
+    <a href="homework.html">📝 Homework</a>
+
+    <a href="projects.html">🧪 Projects</a>
+
+    <a href="grades.html">📊 Grades</a>
+
+    <a href="attendance.html">✅ Attendance</a>
+
+    <a href="announcements.html">📢 Announcements</a>
+
+    <a href="search.html">🔍 Search</a>
+
+    <a href="ai.html">🤖 HIS AI</a>
+
+    <a href="notifications.html">🔔 Notifications</a>
+
+    <a href="profile.html">👤 Profile</a>
+
+    <a href="settings.html">⚙️ Settings</a>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+    <div class="topbar">
+        <h2>Dashboard</h2>
+
+        <input
+            class="search"
+            type="text"
+            placeholder="Search HIS..."
+        >
+    </div>
+
+
+    <div class="welcome">
+        <h1>Welcome to HIS 👋</h1>
+        <p>Hera International School Student Platform</p>
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Today's Classes</h3>
+            <p>5</p>
         </div>
 
-        <nav class="nav">
-
-            <a href="#" class="active">🏠 Home</a>
-            <a href="#">📅 Timetable</a>
-            <a href="#">📚 Subjects</a>
-            <a href="#">📝 Homework</a>
-            <a href="#">🧪 Projects</a>
-            <a href="#">📊 Grades</a>
-            <a href="#">✅ Attendance</a>
-            <a href="#">📢 Announcements</a>
-            <a href="#">🤖 HIS AI</a>
-            <a href="#">🔔 Notifications</a>
-            <a href="#">👤 Profile</a>
-            <a href="#">⚙️ Settings</a>
-
-        </nav>
-
-    </aside>
-
-
-    <main class="main">
-
-        <div class="topbar">
-
-            <h2>Student Portal</h2>
-
-            <input
-                class="search"
-                type="text"
-                placeholder="🔍 Search HIS..."
-            >
-
+        <div class="card">
+            <h3>Attendance</h3>
+            <p>96%</p>
         </div>
 
+        <div class="card">
+            <h3>Assignments</h3>
+            <p>4</p>
+        </div>
 
-        <section class="welcome">
+        <div class="card">
+            <h3>Projects</h3>
+            <p>2</p>
+        </div>
 
-            <h1>Welcome to HIS 👋</h1>
-
-            <p>
-                Your school, your classes, your progress — all in one place.
-            </p>
-
-        </section>
-
-
-        <section class="cards">
-
-            <div class="card">
-                <h3>Today's Classes</h3>
-                <p>5</p>
-            </div>
-
-            <div class="card">
-                <h3>Attendance</h3>
-                <p>96%</p>
-            </div>
-
-            <div class="card">
-                <h3>Assignments</h3>
-                <p>4</p>
-            </div>
-
-            <div class="card">
-                <h3>Projects</h3>
-                <p>2</p>
-            </div>
-
-        </section>
+    </div>
 
 
-        <section class="sections">
+    <div class="section">
 
-            <div class="panel">
+        <h2>Today's Timetable</h2>
 
-                <h2>📅 Today's Timetable</h2>
+        <div class="class-row">
+            <span class="time">8:00 AM</span>
+            <span>Mathematics</span>
+            <span>Classroom</span>
+        </div>
 
-                <div class="class">
-                    <span>08:00 — Mathematics</span>
-                    <strong>Room 204</strong>
-                </div>
+        <div class="class-row">
+            <span class="time">9:00 AM</span>
+            <span>Computer Science</span>
+            <span>I.T Lab</span>
+        </div>
 
-                <div class="class">
-                    <span>09:00 — English</span>
-                    <strong>Room 112</strong>
-                </div>
+        <div class="class-row">
+            <span class="time">10:00 AM</span>
+            <span>Physics</span>
+            <span>Science Lab</span>
+        </div>
 
-                <div class="class">
-                    <span>10:00 — Physics</span>
-                    <strong>Lab 2</strong>
-                </div>
+        <div class="class-row">
+            <span class="time">11:30 AM</span>
+            <span>English</span>
+            <span>Classroom</span>
+        </div>
 
-                <div class="class">
-                    <span>11:00 — Computer Science</span>
-                    <strong>Room 301</strong>
-                </div>
+        <div class="class-row">
+            <span class="time">12:30 PM</span>
+            <span>PE</span>
+            <span>Sports Area</span>
+        </div>
 
-            </div>
+    </div>
 
 
-            <div class="panel">
+    <div class="section">
 
-                <h2>📝 Upcoming</h2>
+        <h2>Upcoming</h2>
 
-                <div class="class">
-                    <span>Math Homework</span>
-                    <strong>Tomorrow</strong>
-                </div>
+        <div class="class-row">
+            <span>📝 Mathematics Assignment</span>
+            <span>Due Soon</span>
+        </div>
 
-                <div class="class">
-                    <span>CS Project</span>
-                    <strong>Friday</strong>
-                </div>
+        <div class="class-row">
+            <span>🧪 Computer Science Project</span>
+            <span>September 20</span>
+        </div>
 
-                <div class="class">
-                    <span>Physics Test</span>
-                    <strong>Monday</strong>
-                </div>
+        <div class="class-row">
+            <span>🔬 Science Project</span>
+            <span>September 25</span>
+        </div>
 
-            </div>
+    </div>
 
-        </section>
-
-    </main>
+</div>
 
 </body>
 </html>
