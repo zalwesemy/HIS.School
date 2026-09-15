@@ -1,1 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HIS — Projects</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 25px 15px;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 35px;
+            padding-left: 10px;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        .nav a {
+            display: block;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #4b5563;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main {
+            margin-left: 240px;
+            padding: 30px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .search {
+            width: 300px;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        .header {
+            background: #2563eb;
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+        }
+
+        .project-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .project h2 {
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .details {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0;
+            font-size: 14px;
+        }
+
+        .detail span:first-child {
+            color: #6b7280;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status.pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .view-button {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 10px 15px;
+            border-radius: 9px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .view-button:hover {
+            background: #1d4ed8;
+        }
+
+        .schedule {
+            display: none;
+            margin-top: 18px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .schedule.show {
+            display: block;
+        }
+
+        .schedule h3 {
+            margin-bottom: 10px;
+        }
+
+        .schedule p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 900px) {
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .topbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            HIS<span>.</span>
+        </div>
+
+
+        <nav class="nav">
+
+            <a href="index.html">
+                🏠 Home
+            </a>
+
+            <a href="timetable.html">
+                📅 Timetable
+            </a>
+
+            <a href="#">
+                📚 Subjects
+            </a>
+
+            <a href="#">
+                📝 Homework
+            </a>
+
+            <a href="projects.html" class="active">
+                🧪 Projects
+            </a>
+
+            <a href="#">
+                📊 Grades
+            </a>
+
+            <a href="#">
+                ✅ Attendance
+            </a>
+
+            <a href="#">
+                📢 Announcements
+            </a>
+
+            <a href="#">
+                🤖 HIS AI
+            </a>
+
+            <a href="#">
+                🔔 Notifications
+            </a>
+
+            <a href="#">
+                👤 Profile
+            </a>
+
+            <a href="#">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <div class="topbar">
+
+            <h2>Projects</h2>
+
+            <input
+                class="search"
+                type="text"
+                placeholder="🔍 Search HIS..."
+            >
+
+        </div>
+
+
+        <section class="header">
+
+            <h1>🧪 My Projects</h1>
+
+            <p>
+                View your projects, deadlines, subjects, and related classes.
+            </p>
+
+        </section>
+
+
+        <section class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-icon">
+                    💻
+                </div>
+
+                <h2>
+                    Computer Science Project
+                </h2>
+
+                <p>
+                    Complete the assigned Computer Science project
+                    and submit it before the deadline.
+                </p>
+
+
+                <div class="details">
+
+                    <div class="detail">
+                        <span>Subject</span>
+                        <strong>Computer Science</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Due</span>
+                        <strong>September 20</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Location</span>
+                        <strong>I.T Lab</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Status</span>
+                        <span class="status pending">
+                            In Progress
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-button"
+                    onclick="toggleSchedule('cs')"
+                >
+                    📅 View Related Timetable
+                </button>
+
+
+                <div
+                    id="cs"
+                    class="schedule"
+                >
+
+                    <h3>
+                        📅 Computer Science Classes
+                    </h3>
+
+                    <p>
+                        <strong>Monday</strong> — 9:00 AM
+                    </p>
+
+                    <p>
+                        <strong>Wednesday</strong> — 10:00 AM
+                    </p>
+
+                    <p>
+                        📍 I.T Lab
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <div class="project-icon">
+                    🧪
+                </div>
+
+                <h2>
+                    Science Project
+                </h2>
+
+                <p>
+                    Complete the current Science project
+                    and prepare it for submission.
+                </p>
+
+
+                <div class="details">
+
+                    <div class="detail">
+                        <span>Subject</span>
+                        <strong>Science</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Due</span>
+                        <strong>September 25</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Location</span>
+                        <strong>Science Lab</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Status</span>
+                        <span class="status pending">
+                            In Progress
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-button"
+                    onclick="toggleSchedule('science')"
+                >
+                    📅 View Related Timetable
+                </button>
+
+
+                <div
+                    id="science"
+                    class="schedule"
+                >
+
+                    <h3>
+                        📅 Science Classes
+                    </h3>
+
+                    <p>
+                        <strong>Sunday</strong> — 10:00 AM
+                    </p>
+
+                    <p>
+                        <strong>Thursday</strong> — 11:30 AM
+                    </p>
+
+                    <p>
+                        📍 Science Lab
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project">
+
+                <div class="project-icon">
+                    📚
+                </div>
+
+                <h2>
+                    English Project
+                </h2>
+
+                <p>
+                    Complete the English project and
+                    prepare the final submission.
+                </p>
+
+
+                <div class="details">
+
+                    <div class="detail">
+                        <span>Subject</span>
+                        <strong>English</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Due</span>
+                        <strong>September 28</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Location</span>
+                        <strong>Classroom</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Status</span>
+                        <span class="status">
+                            Not Started
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="view-button"
+                    onclick="toggleSchedule('english')"
+                >
+                    📅 View Related Timetable
+                </button>
+
+
+                <div
+                    id="english"
+                    class="schedule"
+                >
+
+                    <h3>
+                        📅 English Classes
+                    </h3>
+
+                    <p>
+                        <strong>Tuesday</strong> — 8:00 AM
+                    </p>
+
+                    <p>
+                        <strong>Thursday</strong> — 9:00 AM
+                    </p>
+
+                    <p>
+                        📍 Classroom
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        function toggleSchedule(id) {
+
+            const schedule =
+                document.getElementById(id);
+
+            schedule.classList.toggle("show");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
