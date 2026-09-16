@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIS | Subjects</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid #e5e7eb;
+    padding: 25px 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #4b5563;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 10px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #e8f0ff;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.main {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+.header {
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.subject {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    transition: 0.2s;
+}
+
+.subject:hover {
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.subject h2 {
+    margin-bottom: 8px;
+}
+
+.subject p {
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 9px 14px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .subjects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main {
+        margin-left: 190px;
+    }
+
+    .subjects {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">HIS</div>
+
+    <a href="index.html">🏠 Home</a>
+    <a href="timetable.html">📅 Timetable</a>
+    <a href="subjects.html" class="active">📚 Subjects</a>
+    <a href="homework.html">📝 Homework</a>
+    <a href="projects.html">🧪 Projects</a>
+    <a href="grades.html">📊 Grades</a>
+    <a href="attendance.html">✅ Attendance</a>
+    <a href="announcements.html">📢 Announcements</a>
+    <a href="search.html">🔍 Search</a>
+    <a href="ai.html">🤖 HIS AI</a>
+    <a href="notifications.html">🔔 Notifications</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="settings.html">⚙️ Settings</a>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>My Subjects 📚</h1>
+        <p>Your subjects and learning areas.</p>
+    </div>
+
+    <div class="subjects">
+
+        <div class="subject">
+            <div class="icon">🔢</div>
+            <h2>Mathematics</h2>
+            <p>Numbers, algebra, geometry and problem solving.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">💻</div>
+            <h2>Computer Science</h2>
+            <p>Programming, computing and digital technology.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">⚛️</div>
+            <h2>Physics</h2>
+            <p>Forces, energy, motion and scientific concepts.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">🧪</div>
+            <h2>Chemistry</h2>
+            <p>Matter, reactions and chemical processes.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">🧬</div>
+            <h2>Biology</h2>
+            <p>Living organisms, cells and life processes.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">📖</div>
+            <h2>English</h2>
+            <p>Reading, writing, grammar and communication.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">📝</div>
+            <h2>Arabic</h2>
+            <p>Language, literature and communication skills.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">🎨</div>
+            <h2>Art</h2>
+            <p>Creative work, design and artistic expression.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+        <div class="subject">
+            <div class="icon">⚽</div>
+            <h2>PE</h2>
+            <p>Physical education, fitness and sports activities.</p>
+            <a href="timetable.html" class="button">View Timetable</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
